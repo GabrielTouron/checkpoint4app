@@ -1,8 +1,11 @@
 <div class="global-container row">
-  <mat-card class="example-card" *ngFor="let video of videos ; let i = index">
-    <mat-card-header>
-      <mat-card-title>{{video.videoTitle}}</mat-card-title>
-    </mat-card-header>
-    <iframe width="500" height="315" [src]="embedVideos[i] | safe" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </mat-card>
+  <h1>Mes Videos 🎥</h1>
+  <div class="row">
+    <mat-card class="example-card" *ngFor="let video of videos ; let i = index">
+      <mat-card-header>
+        <mat-card-title>{{video.videoTitle}}</mat-card-title>
+      </mat-card-header>
+      <iframe width="500" height="315" [src]="embedVideos[i] | safe" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </mat-card>
+  </div>
 </div>
