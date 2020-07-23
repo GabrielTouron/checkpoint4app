@@ -1,0 +1,71 @@
+<div class="global-container">
+  <mat-horizontal-stepper linear #stepper>
+    <mat-step [stepControl]="battleFormGroup" editable=true>
+      <form [formGroup]="battleFormGroup">
+        <ng-template matStepLabel>Détail du battle</ng-template>
+        <mat-form-field appearance="outline">
+          <mat-label>Nom du battle</mat-label>
+          <input  matInput
+                  type="text"
+                  formControlName="battleNameCtrl">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Edition</mat-label>
+          <input matInput type="number" formControlName="editionCtrl" >
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Position</mat-label>
+            <mat-select (selectionChange)="showIsWinner($event)" formControlName="stepCtrl">
+              <mat-option *ngFor="let step of steps" [value]="step.id">{{step.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-checkbox  *ngIf="show" formControlName="isWinnerCtrl">Winner ?</mat-checkbox>
+        <mat-form-field appearance="outline">
+          <mat-label>Price</mat-label>
+          <input matInput type="number" formControlName="priceCtrl" >
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="videoDetailsFormGroup" editable=true>
+      <form [formGroup]="videoDetailsFormGroup">
+        <ng-template matStepLabel>Informations sur la vidéo</ng-template>
+        <mat-form-field appearance="outline">
+          <mat-label>Titre de la vidéo</mat-label>
+          <input matInput formControlName="videoTitleCtrl">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Commentaire</mat-label>
+          <textarea matInput formControlName="commentaryCtrl"></textarea>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Commentaire perso</mat-label>
+          <textarea matInput formControlName="customCommentaryCtrl" ></textarea>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Lieux ?</mat-label>
+          <mat-select formControlName="placeCtrl">
+            <mat-option *ngFor="let place of places" [value]="place.id">{{place.name}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="save()">Sauvegarder la vidéo</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>

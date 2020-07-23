@@ -1,0 +1,30 @@
+.mat-card {
+  width: 500px;
+  margin: 2rem;
+}
+
+.mat-button {
+  padding: 0;
+}
+
+.row {
+  display: flex;
+  margin-right: 50px;
+  flex-wrap: wrap;
+}
+
+.mat-card-header {
+  margin-bottom: 2rem;
+
+  .mat-card-title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+    width: 500px;
+  }
+}
+
+h1 {
+  text-decoration: underline;;
+}
