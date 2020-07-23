@@ -9,6 +9,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatSelectModule} from '@angular/material/select';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
+
 
 
 @NgModule({
@@ -22,7 +26,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatButtonModule,
     FormsModule,
     MatDialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule,
+    MatCheckboxModule
 
   ]
 })

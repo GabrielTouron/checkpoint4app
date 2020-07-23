@@ -13,6 +13,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import { VideoModule } from './video/video.module';
+import { MatSelectModule } from '@angular/material/select';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { VideoModule } from './video/video.module';
     MatButtonModule,
     MatIconModule,
     MatDialogModule,
-    VideoModule
+    VideoModule,
+    MatSelectModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

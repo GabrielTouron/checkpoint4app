@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
+import { Router } from '@angular/router';
+import { YoutubeService } from '../../services/youtube.service';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +13,10 @@ export class HeaderComponent implements OnInit {
 
   link: string;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(
+    public dialog: MatDialog,
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
   }
@@ -23,9 +28,10 @@ export class HeaderComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
       this.link = result;
-      console.log(this.link);
+      if (this.link) {
+        this.router.navigate(['/video/new'], {queryParams: {link: this.link}})
+      }
 
     });
   }
