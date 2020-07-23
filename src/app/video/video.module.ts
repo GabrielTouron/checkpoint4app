@@ -11,12 +11,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { VideoComponent } from './video.component';
+import {MatCardModule} from '@angular/material/card';
+import { SafePipe } from '../helpers/safe.pipe';
 
 
 
 
 @NgModule({
-  declarations: [StepperComponent],
+  declarations: [
+    StepperComponent,
+    VideoComponent,
+    SafePipe
+  ],
   imports: [
     CommonModule,
     VideoRoutingModule,
@@ -28,7 +35,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatDialogModule,
     ReactiveFormsModule,
     MatSelectModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatCardModule
 
   ]
 })
