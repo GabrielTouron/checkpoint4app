@@ -11,11 +11,15 @@ export class VideoService {
 
   constructor(private http: HttpClient) { }
 
-  getAll():Observable<Video[]> {
+  getAll(): Observable<Video[]> {
     return this.http.get<Video[]>(`${environment.APIURI}videos`);
   }
 
   post(video: Video): Observable<Video> {
     return this.http.post<Video>(`${environment.APIURI}videos`, video);
+  }
+
+  getOne(id: number): Observable<Video> {
+    return this.http.get<Video>(`${environment.APIURI}videos/${id}`);
   }
 }

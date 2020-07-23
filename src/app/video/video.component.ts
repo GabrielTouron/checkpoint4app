@@ -50,4 +50,8 @@ export class VideoComponent implements OnInit, OnDestroy {
     }
   }
 
+  detail(id: number) {
+    this.router.navigate([`/video/${id}`]);
+  }
+
 }

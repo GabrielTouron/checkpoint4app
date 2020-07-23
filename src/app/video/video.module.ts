@@ -14,6 +14,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { VideoComponent } from './video.component';
 import {MatCardModule} from '@angular/material/card';
 import { SafePipe } from '../helpers/safe.pipe';
+import { VideoDetailComponent } from './components/video-detail/video-detail.component';
 
 
 
@@ -22,7 +23,8 @@ import { SafePipe } from '../helpers/safe.pipe';
   declarations: [
     StepperComponent,
     VideoComponent,
-    SafePipe
+    SafePipe,
+    VideoDetailComponent
   ],
   imports: [
     CommonModule,
