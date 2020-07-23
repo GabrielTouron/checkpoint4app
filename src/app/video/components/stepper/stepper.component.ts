@@ -4,7 +4,7 @@ import { StepService } from 'src/app/shared/services/step.service';
 import { Step } from 'src/app/shared/models/step.model';
 import { Battle } from 'src/app/shared/models/battle.model';
 import { BattleService } from 'src/app/shared/services/battle.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink, Router } from '@angular/router';
 import { YoutubeService } from 'src/app/shared/services/youtube.service';
 import { Video } from 'src/app/shared/models/video.model';
 import { VideoService } from 'src/app/shared/services/video.service';
@@ -37,7 +37,8 @@ export class StepperComponent implements OnInit {
     private placeService: PlaceService,
     private activatedRoute: ActivatedRoute,
     private youtubeService: YoutubeService,
-    private videoService: VideoService
+    private videoService: VideoService,
+    private router: Router
   ) {
     this.activatedRoute.queryParams.subscribe(data => {
       this.link = data;
@@ -150,6 +151,9 @@ export class StepperComponent implements OnInit {
       }
 
     });
+
+    this.router.navigate(['/video/list']);
+
   }
 
 }
